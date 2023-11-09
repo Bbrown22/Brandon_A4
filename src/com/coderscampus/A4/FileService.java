@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class FileService {
 	public Student[] readFromCSV(String filename) throws IOException {
 	    BufferedReader reader = new BufferedReader(new FileReader(filename));
-	    Student[] students = new Student[1000]; // assuming max 1000 students
+	    Student[] students = new Student[1000]; 
 	    String line;
 	    int index = 0;
 	    boolean isFirstLine = true;
@@ -19,7 +19,7 @@ public class FileService {
 	        students[index++] = new Student(values[0], values[1], values[2], Integer.parseInt(values[3]));
 	    }
 	    reader.close();
-	    return Arrays.copyOf(students, index); // trim the array to the actual size
+	    return Arrays.copyOf(students, index); 
 	}
 
     public void writeToCSV(Student[] students, String filename) throws IOException {
